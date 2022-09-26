@@ -3,7 +3,7 @@ import json
 import os.path
 from werkzeug.utils import secure_filename
 
-print(mistake)
+
 application = app = Flask(__name__)
 app.secret_key = 'h432hi5ohi3h5i5hi3o2hi'
 
