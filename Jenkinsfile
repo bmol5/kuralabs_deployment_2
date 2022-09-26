@@ -8,7 +8,7 @@ pipeline {
         source test3/bin/activate
         pip install pip --upgrade
         pip install -r requirements.txt
-        sudo apt install -y mypy
+        python3 -m pip install mypy
         mypy --show-error-codes application.py
         export FLASK_APP=application
         flask run &
