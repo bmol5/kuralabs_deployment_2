@@ -11,14 +11,8 @@ pipeline {
         export FLASK_APP=application
         flask run &
         '''
-     }
-   
-     post {
-       always {
-           emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-           }
+        }
       }
-    }
      stage ('test') {
       steps {
         sh '''#!/bin/bash
@@ -36,7 +30,7 @@ pipeline {
     }
      stage ('Deploy') {
        steps {
-         sh '/var/lib/jenkins/.local/bin/eb deploy url-shortner-dev2'
+         sh '/var/lib/jenkins/.local/bin/eb deploy url-shortner-dev'
    }
   }
  }
